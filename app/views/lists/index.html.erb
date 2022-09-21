@@ -1,23 +1,9 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../images/sala.png);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div>
-
-
+  <button class= "btn btn-secondary btn-lg" ><%= link_to "list new", new_list_path %>
+  </button>
 <div class="cards">
-<div
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"> </div>
-    <%=image_tag "sala.jpg", alt: "sala.jpg", width:400 %>
+  <% @lists.each do |list|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.image_url%>)">
+    <%= list.name%>
   </div>
-</div>
-
-
-<h1>index</h1>
-<% @lists.each do |list| %>
-<h2><%= list.name  %></h2>
-<% end %>
-<%= link_to "list new", new_list_path %>
+  <% end%>
+   </div>
