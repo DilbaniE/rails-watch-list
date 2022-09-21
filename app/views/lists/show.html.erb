@@ -1,2 +1,8 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1><%= @list.name %></h1>
+<%= link_to "add a movie", new_list_bookmark_path(@list) %>
+<% @list.movies.each do |movie| %>
+  <%= movie.title %>
+  <% movie.bookmarks.each do |bookmark| %>
+  <%= bookmark.comment %>
+  <% end %>
+<% end %>
